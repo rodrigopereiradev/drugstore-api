@@ -1,22 +1,22 @@
 package br.com.rodrigo.drugstoreapi.models.mocks;
 
 import br.com.rodrigo.drugstoreapi.models.State;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StateMock {
 
-    private Set<State> states = new HashSet<>();
+    private List<State> states = new ArrayList<>();
 
-    public Set<State> getStates() { return states; }
+    public List<State> getStates() { return states; }
 
     public StateMock() {
         this.states = retrieveStates();
     }
 
-    private Set<State> retrieveStates() {
+    private List<State> retrieveStates() {
 
-        Set<State> states = new HashSet<>();
+        List<State> states = new ArrayList<>();
         states.add(new State("AC", "Acre"));
         states.add(new State("AL", "Alagoas"));
         states.add(new State("AP", "Amapá"));

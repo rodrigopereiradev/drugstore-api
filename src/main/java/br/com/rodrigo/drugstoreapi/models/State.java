@@ -3,8 +3,10 @@ package br.com.rodrigo.drugstoreapi.models;
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "State")
 public class State extends BaseEntity {
 
     @Column(name = "INITIALS")

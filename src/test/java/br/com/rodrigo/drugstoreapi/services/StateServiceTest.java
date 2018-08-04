@@ -2,6 +2,7 @@ package br.com.rodrigo.drugstoreapi.services;
 
 import br.com.rodrigo.drugstoreapi.models.State;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,8 +21,8 @@ public class StateServiceTest {
     private StateService stateService;
 
     @Test
-    void retrieveAll27States() {
-        Set<State> states = new HashSet<>();
+    public void retrieveAll27States() {
+        List<State> states = stateService.retrieveAllStates();
         Assert.assertEquals(27, states.size());
     }
 
