@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name = "municipio")
 public class City extends BaseEntity {
 
-    @Column(name = "NAME")
+    @Column(name = "NO_MUNICIPIO_SIACI")
     private String name;
 
     public City() {

@@ -1,19 +1,24 @@
 package br.com.rodrigo.drugstoreapi.models;
 
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "State")
-public class State extends BaseEntity {
+public class State extends BaseEntity implements Serializable {
+
+    private static final long serialVersionUID = 8671484097955862648L;
 
     @Column(name = "INITIALS")
     private String initials;
 
     @Column(name = "NAME")
     private String name;
+
+    public State() {}
 
     public State(String initials, String name) {
         this.initials = initials;
