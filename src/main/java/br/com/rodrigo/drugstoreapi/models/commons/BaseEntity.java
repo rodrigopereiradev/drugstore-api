@@ -8,7 +8,7 @@ public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
-    private Long id;
+    protected Long id;
 
     public BaseEntity() {};
 
