@@ -2,7 +2,9 @@ package br.com.rodrigo.drugstoreapi.models;
 
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
 import java.io.Serializable;
+import javax.persistence.Entity;
 
+@Entity
 public class Email extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 4154837468502489831L;

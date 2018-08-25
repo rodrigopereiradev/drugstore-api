@@ -2,9 +2,11 @@ package br.com.rodrigo.drugstoreapi.models;
 
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
 import java.io.Serializable;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Address extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = -8660827284482545165L;

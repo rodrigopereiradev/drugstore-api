@@ -27,8 +27,4 @@ public class CityResource {
         return new ResponseEntity<>(cities, HttpStatus.OK);
     }
 
-    @PostMapping(value = "cities")
-    public ResponseEntity<City> saveCity(@RequestBody City city) {
-        return new ResponseEntity<>(city, HttpStatus.OK);
-    }
 }

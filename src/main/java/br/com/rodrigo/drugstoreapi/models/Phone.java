@@ -2,9 +2,11 @@ package br.com.rodrigo.drugstoreapi.models;
 
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
 import java.io.Serializable;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+@Entity
 public class Phone extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = -2269310176880076605L;
