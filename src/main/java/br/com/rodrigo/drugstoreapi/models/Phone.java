@@ -1,6 +1,7 @@
 package br.com.rodrigo.drugstoreapi.models;
 
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
+import br.com.rodrigo.drugstoreapi.models.enums.PhoneType;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

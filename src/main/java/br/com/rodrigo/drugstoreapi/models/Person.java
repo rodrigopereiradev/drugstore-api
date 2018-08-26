@@ -1,6 +1,7 @@
 package br.com.rodrigo.drugstoreapi.models;
 
 import br.com.rodrigo.drugstoreapi.models.commons.BaseEntity;
+import br.com.rodrigo.drugstoreapi.models.enums.Gender;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import java.util.List;

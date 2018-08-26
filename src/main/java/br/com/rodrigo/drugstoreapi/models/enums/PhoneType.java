@@ -1,4 +1,4 @@
-package br.com.rodrigo.drugstoreapi.models;
+package br.com.rodrigo.drugstoreapi.models.enums;
 
 public enum PhoneType {
 
