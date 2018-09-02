@@ -19,4 +19,8 @@ public class CityService {
 
     public List<City> findCitiesByState(String state) { return  cityRepository.findCitiesByState(state); }
 
+    public City findCityByName(String cityName) {
+        return this.cityRepository.findByName(cityName);
+    }
+
 }

@@ -15,6 +15,8 @@ public class Address extends BaseEntity implements Serializable {
 
     private String number;
 
+    private String complement;
+
     private String neighborhood;
 
     private String zipCode;
@@ -26,6 +28,20 @@ public class Address extends BaseEntity implements Serializable {
     @JoinColumn
     @ManyToOne
     private State state;
+
+    public Address() {}
+
+    public Address(Long id, String street, String number, String complement, String neighborhood, String zipCode,
+                   City city, State state) {
+        super(id);
+        this.street = street;
+        this.number = number;
+        this.complement = complement;
+        this.neighborhood = neighborhood;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.state = state;
+    }
 
     public String getStreet() {
         return street;
@@ -41,6 +57,14 @@ public class Address extends BaseEntity implements Serializable {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getComplement() {
+        return complement;
+    }
+
+    public void setComplement(String complement) {
+        complement = complement;
     }
 
     public String getNeighborhood() {
@@ -78,13 +102,14 @@ public class Address extends BaseEntity implements Serializable {
     @Override
     public String toString() {
         return "Address{" +
-                "id='" + super.getId() + '\'' +
-                "address='" + street + '\'' +
+                "street='" + street + '\'' +
                 ", number='" + number + '\'' +
+                ", complement='" + complement + '\'' +
                 ", neighborhood='" + neighborhood + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", city=" + city +
                 ", state=" + state +
+                ", id=" + id +
                 '}';
     }
 }

@@ -11,6 +11,11 @@ public class Email extends BaseEntity implements Serializable {
 
     private String address;
 
+    public Email(Long id, String address) {
+        super(id);
+        this.address = address;
+    }
+
     public String getAddress() {
 
         return address;

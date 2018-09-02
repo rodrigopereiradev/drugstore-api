@@ -20,4 +20,6 @@ public class StateService {
         return this.stateRepository.findAll();
     }
 
+    public State retrieveStateByInitials(String initials) { return this.stateRepository.findByInitials(initials); }
+
 }

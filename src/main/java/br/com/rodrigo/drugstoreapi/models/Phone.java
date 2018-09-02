@@ -17,6 +17,14 @@ public class Phone extends BaseEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private PhoneType phoneType;
 
+    public Phone() {}
+
+    public Phone(Long id, String number, PhoneType phoneType) {
+        super(id);
+        this.number = number;
+        this.phoneType = phoneType;
+    }
+
     public String getNumber() {
         return number;
     }

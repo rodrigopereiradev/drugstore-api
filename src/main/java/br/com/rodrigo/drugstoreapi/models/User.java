@@ -7,10 +7,10 @@ import javax.persistence.*;
 @Entity
 public class User extends BaseEntity {
 
-    @Column
+    @Column(unique = true)
     private String username;
 
-    @Column
+    @Column(unique = true)
     private String password;
 
     @Column
@@ -24,9 +24,20 @@ public class User extends BaseEntity {
     private Collection<Role> authorities;
 
     @JoinColumn
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST})
     private Person person;
 
+    public User() {}
+
+    public User(Long id, String username, String password, Boolean enabled, String avatar, Collection<Role> authorities, Person person) {
+        super(id);
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.avatar = avatar;
+        this.authorities = authorities;
+        this.person = person;
+    }
 
     public String getUsername() {
         return username;

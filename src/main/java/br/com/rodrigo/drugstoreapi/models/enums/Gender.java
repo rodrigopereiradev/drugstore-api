@@ -1,7 +1,7 @@
 package br.com.rodrigo.drugstoreapi.models.enums;
 
 public enum Gender {
-    M("male"), F("female");
+    MALE("M"), FEMALE("F");
 
     private String gender;
 

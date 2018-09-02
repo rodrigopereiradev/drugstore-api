@@ -13,28 +13,42 @@ public class Person extends BaseEntity {
     @Column
     private String name;
 
-    @Column
+    @Column(unique = true)
     private String cpf;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     @Column
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "America/Sao_Paulo")
     private LocalDate birth;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Address address;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "person_id")
-    private List<Email> emails;
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE})
+    @JoinColumn(name = "person_id", unique = true, nullable = false)
+    private Email email;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "person_id")
     private List<Phone> phones;
 
+    public Person() {}
+
+    public Person(Long id, String name, String cpf, Gender gender, LocalDate birth, Address address, Email email,
+                  List<Phone> phones) {
+        super(id);
+        this.name = name;
+        this.cpf = cpf;
+        this.gender = gender;
+        this.birth = birth;
+        this.address = address;
+        this.email = email;
+        this.phones = phones;
+    }
 
     public String getName() {
         return name;
@@ -76,12 +90,12 @@ public class Person extends BaseEntity {
         this.address = address;
     }
 
-    public List<Email> getEmails() {
-        return emails;
+    public Email getEmail() {
+        return email;
     }
 
-    public void setEmails(List<Email> emails) {
-        this.emails = emails;
+    public void setEmail(Email email) {
+        this.email = email;
     }
 
     public List<Phone> getPhones() {
@@ -110,7 +124,7 @@ public class Person extends BaseEntity {
                 ", gender=" + gender +
                 ", birth='" + birth + '\'' +
                 ", address=" + address +
-                ", emails=" + emails +
+                ", email=" + email +
                 ", phones=" + phones +
                 ", id=" + id +
                 '}';

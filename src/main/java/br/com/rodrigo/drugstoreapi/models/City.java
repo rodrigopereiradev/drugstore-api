@@ -13,7 +13,10 @@ public class City extends BaseEntity implements Serializable {
     @Column(name = "NO_MUNICIPIO_SIACI")
     private String name;
 
-    public City(String name) {
+    public City() {}
+
+    public City(Long id, String name) {
+        super(id);
         this.name = name;
     }
 
