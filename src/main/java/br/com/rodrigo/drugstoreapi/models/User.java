@@ -19,9 +19,9 @@ public class User extends BaseEntity {
     @Column
     private String avatar;
 
-    @JoinColumn
-    @OneToMany
-    private Collection<Role> authorities;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Collection<String> authorities;
 
     @JoinColumn
     @OneToOne(cascade = {CascadeType.PERSIST})
@@ -29,7 +29,7 @@ public class User extends BaseEntity {
 
     public User() {}
 
-    public User(Long id, String username, String password, Boolean enabled, String avatar, Collection<Role> authorities, Person person) {
+    public User(Long id, String username, String password, Boolean enabled, String avatar, Collection<String> authorities, Person person) {
         super(id);
         this.username = username;
         this.password = password;
@@ -71,11 +71,11 @@ public class User extends BaseEntity {
         this.avatar = avatar;
     }
 
-    public Collection<Role> getAuthorities() {
+    public Collection<String> getAuthorities() {
         return authorities;
     }
 
-    public void setAuthorities(Collection<Role> authorities) {
+    public void setAuthorities(Collection<String> authorities) {
         this.authorities = authorities;
     }
 
