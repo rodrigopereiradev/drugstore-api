@@ -20,7 +20,7 @@ public class User extends BaseEntity {
     private String avatar;
 
     @Column
-    @Enumerated(EnumType.STRING)
+    @ElementCollection(fetch = FetchType.EAGER)
     private Collection<String> authorities;
 
     @JoinColumn
